@@ -15,4 +15,4 @@ SELECT * FROM accounts WHERE account_balance > 100;
 -- 8. How do you add a new account?
 INSERT INTO accounts (username, city, transactions_completed, transactions_attempted, account_balance) VALUES ('tim', 'saint paul', 25, 25, 3.39);
 -- 9. The bank is losing money in Miami and Phoenix and needs to unload low transaction customers: How do you delete users that reside in miami OR phoenix and have completed fewer than 5 transactions.
-DELETE FROM accounts WHERE city = 'miami' OR city = 'phoenix';
+DELETE FROM accounts WHERE city IN ('miami', 'phoenix') AND transactions_completed < 5;
